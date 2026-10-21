@@ -160,8 +160,6 @@ official datasheet:
     device.
 ```
 
-## Review
-
-- Reviewer: REVIEWER_NAME_HERE
-- Review date: REVIEW_DATE_HERE
-- Result: REVIEW_RESULT_HERE (approved, or changes requested with reasons)
+- Reviewer: Uzzaim Taufique (GitHub: uzzaim-taufique)
+- Review date: 21 October 2026
+- Result: Approved on PR #2 (https://github.com/uzzaim-taufique/MicroAssist/pull/2) after the evaluation results were added
