@@ -5,7 +5,7 @@ import main
 
 class TestInputHandler(unittest.TestCase):
     def run_input(self, text):
-        with mock.patch("builtins.input", return_value=text) as entered, mock.patch("main.get_recommendation", return_value="ESP32") as rec, mock.patch("main.load_dotenv"), mock.patch("builtins.print"):
+        with mock.patch("builtins.input", return_value=text) as entered, mock.patch("main.get_recommendation", return_value="ESP32") as rec, mock.patch("main.load_dotenv"), mock.patch("main.route", return_value="selection"), mock.patch("builtins.print"):
             main.main()
         return entered, rec
 

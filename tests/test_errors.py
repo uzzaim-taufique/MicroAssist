@@ -39,7 +39,7 @@ class TestErrorHandling(unittest.TestCase):
         self.assertNotIn(FAKE_KEY, str(ctx.exception))
 
     def test_empty_input_shows_message_and_no_api_call(self):
-        with mock.patch("builtins.input", side_effect=["", "room monitor"]), mock.patch("main.get_recommendation", return_value="ESP32") as rec, mock.patch("builtins.print") as shown:
+        with mock.patch("builtins.input", side_effect=["", "room monitor"]), mock.patch("main.route", return_value="selection"), mock.patch("main.get_recommendation", return_value="ESP32") as rec, mock.patch("builtins.print") as shown:
             main.main()
         self.assertIn(errors.EMPTY_INPUT, [c.args[0] for c in shown.call_args_list if c.args])
         rec.assert_called_once_with("room monitor")
@@ -75,7 +75,7 @@ class TestErrorHandling(unittest.TestCase):
                 self.assertEqual(str(ctx.exception), errors.EMPTY_RESPONSE)
 
     def test_error_is_shown_without_traceback(self):
-        with mock.patch("builtins.input", return_value="room monitor"), mock.patch("main.get_recommendation", side_effect=errors.MicroAssistError(errors.CONNECTION_FAILED)), mock.patch("builtins.print") as shown:
+        with mock.patch("builtins.input", return_value="room monitor"), mock.patch("main.route", return_value="selection"), mock.patch("main.get_recommendation", side_effect=errors.MicroAssistError(errors.CONNECTION_FAILED)), mock.patch("builtins.print") as shown:
             main.main()
         self.assertIn(errors.CONNECTION_FAILED, " ".join(str(c.args[0]) for c in shown.call_args_list if c.args))
 
