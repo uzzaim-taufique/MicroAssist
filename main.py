@@ -1,22 +1,39 @@
-"""MicroAssist terminal entry point: run with `python main.py`."""
+"""MicroAssist terminal entry point: run with `python main.py`.
+
+Every request goes to the router agent first (SCRUM-15), which decides whether
+the recommendation agent or the debugging agent should answer.
+"""
 
 from dotenv import load_dotenv
 
 import errors
+from microassist.debugger import get_debug_help
 from microassist.recommender import get_recommendation
+from microassist.router import CLARIFICATION, DEBUGGING, SELECTION, route
+
+PROMPT = "Describe your project requirements or your problem: "
 
 
 def main():
     load_dotenv()
-    print("MicroAssist - microcontroller recommendation assistant")
+    print("MicroAssist - microcontroller selection and debugging assistant")
     try:
-        requirements = input("Describe your project requirements: ").strip()
-        while not requirements:
+        text = input(PROMPT).strip()
+        while not text:
             print(errors.EMPTY_INPUT)  # ask again; no API call is made
-            requirements = input("Describe your project requirements: ").strip()
+            text = input(PROMPT).strip()
 
         print("\nAsking Google AI...\n")
-        print(get_recommendation(requirements))
+        agent = route(text)
+        if agent == SELECTION:
+            print("[Recommendation agent]\n")
+            print(get_recommendation(text))
+        elif agent == DEBUGGING:
+            print("[Debugging agent]\n")
+            print(get_debug_help(text))
+        else:
+            print("[MicroAssist]\n")
+            print(CLARIFICATION)
     except errors.MicroAssistError as exc:
         print(f"\n[MicroAssist] {exc}")
     except (KeyboardInterrupt, EOFError):
