@@ -9,7 +9,7 @@ MicroAssistError with a friendly message from errors.py.
 import os
 from pathlib import Path
 
-import httpx
+
 from google import genai
 from google.genai import errors as genai_errors
 from google.genai import types
@@ -48,9 +48,9 @@ def get_debug_help(problem, client=None, model=None):
         )
     except genai_errors.APIError as exc:
         raise errors.MicroAssistError(errors.SERVICE_ERROR) from exc
-    except httpx.TimeoutException as exc:
+    except errors.TIMEOUT_EXCEPTIONS as exc:
         raise errors.MicroAssistError(errors.TIMED_OUT) from exc
-    except (httpx.TransportError, OSError) as exc:
+    except errors.CONNECTION_EXCEPTIONS as exc:
         raise errors.MicroAssistError(errors.CONNECTION_FAILED) from exc
 
     text = response.text or ""

@@ -8,7 +8,7 @@ and the API key is never shown.
 import os
 from pathlib import Path
 
-import httpx
+
 from google import genai
 from google.genai import errors as genai_errors
 from google.genai import types
@@ -48,9 +48,9 @@ def get_recommendation(requirements, client=None, model=None):
         )
     except genai_errors.APIError as exc:          # wrong key, quota, server error
         raise errors.MicroAssistError(errors.SERVICE_ERROR) from exc
-    except httpx.TimeoutException as exc:         # Google AI too slow
+    except errors.TIMEOUT_EXCEPTIONS as exc:         # Google AI too slow
         raise errors.MicroAssistError(errors.TIMED_OUT) from exc
-    except (httpx.TransportError, OSError) as exc:  # no internet
+    except errors.CONNECTION_EXCEPTIONS as exc:  # no internet
         raise errors.MicroAssistError(errors.CONNECTION_FAILED) from exc
 
     text = response.text or ""
