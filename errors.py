@@ -1,4 +1,21 @@
 """Error messages shown to the user (SCRUM-8)."""
+
+import importlib
+
+# google-genai 2.x sends requests with the "httpx" library and 3.x with "httpx2".
+# Both have the same exception classes, so we catch whichever ones exist.
+_HTTP_LIBS = []
+for _name in ("httpx", "httpx2"):
+    try:
+        _HTTP_LIBS.append(importlib.import_module(_name))
+    except ImportError:
+        pass
+
+# Google AI did not answer in time.
+TIMEOUT_EXCEPTIONS = tuple(lib.TimeoutException for lib in _HTTP_LIBS)
+# No internet / could not reach Google AI (TimeoutException is a subclass,
+# so always check TIMEOUT_EXCEPTIONS first).
+CONNECTION_EXCEPTIONS = tuple(lib.TransportError for lib in _HTTP_LIBS) + (OSError,)
  
 EMPTY_INPUT = "Please enter your project requirements."
 MISSING_API_KEY = ("API key not found. Add GEMINI_API_KEY to your .env file "
