@@ -1,0 +1,36 @@
+﻿> py main.py
+MicroAssist - microcontroller selection and debugging assistant
+Describe your project requirements or your problem: Arduino upload fails with "programmer is not responding".
+
+Asking Google AI...
+
+[Debugging agent]
+
+### 1. Problem summary
+Your code fails to upload to your Arduino, resulting in a "programmer is not responding" error message.
+
+### 2. Likely causes and fixes
+
+* **Incorrect Board or Port selected in the IDE**
+  * **Why it happens:** The Arduino IDE is trying to talk to the wrong device or an inactive port.
+  * **Check:** In the Arduino IDE, open **Tools > Board** and **Tools > Port**.
+  * **Fix:** Select your exact Arduino model and the active serial port associated with your board. If using an Arduino Nano, try changing **Tools > Processor** to "ATmega328P (Old Bootloader)".
+
+* **Hardware connected to RX/TX pins (Pins 0 and 1)**
+  * **Why it happens:** Digital pins 0 and 1 share the serial line used to upload code. External components (like Bluetooth modules or GPS) block serial communication.
+  * **Check:** Look at your Arduino to see if any wires or shields are connected to pins 0 (RX) and 1 (TX).
+  * **Fix:** Disconnect all wires from pins 0 and 1 while uploading code, then reconnect them once the upload completes.
+
+* **Power-only USB cable or missing driver**
+  * **Why it happens:** Some USB cables only transmit power and no data. Also, board clones often require custom USB drivers (like CH340).
+  * **Check:** Unplug and re-plug the board while checking your computer's Device Manager (Windows) or System Information (Mac) to see if a port appears.
+  * **Fix:** Swap to a known data-capable USB cable, or download and install the appropriate USB-to-serial driver for your board.
+
+### 3. Information needed
+1. What specific Arduino model are you using (for example: Uno R3, Nano, Mega, or a clone)?
+2. Do you have any modules or components currently wired to the board?
+3. What options are listed under **Tools > Port** in the Arduino IDE?
+
+### 4. Safety notes
+Always unplug the board from power/USB before changing any wiring to avoid short circuits.
+

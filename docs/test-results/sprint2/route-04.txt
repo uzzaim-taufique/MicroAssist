@@ -1,0 +1,32 @@
+﻿> py main.py
+MicroAssist - microcontroller selection and debugging assistant
+Describe your project requirements or your problem: My ESP32 keeps restarting when the motor turns on.
+
+Asking Google AI...
+
+[Debugging agent]
+
+### 1. Problem summary
+Your ESP32 resets repeatedly whenever the motor turns on. This usually happens because the motor disrupts the power supply or injects electrical noise into the circuit.
+
+### 2. Likely causes and fixes
+
+*   **Voltage drop (Brownout)**
+    *   **Why:** Motors draw a large surge of current when starting. This sudden demand pulls the supply voltage below the minimum level the ESP32 needs to operate, triggering a brownout reset.
+    *   **Check:** See if the ESP32 power LED dims or turns off for a split second right as the motor starts.
+    *   **Fix:** Use separate power sources for the motor and the ESP32, but make sure to connect their ground (GND) pins together. Alternatively, add a large electrolytic capacitor (470 ┬╡F to 1000 ┬╡F) across the ESP32 power supply pins.
+
+*   **Inductive voltage spikes (Back-EMF)**
+    *   **Why:** Switching a motor creates high-voltage spikes that feed back into the circuit, disrupting or resetting the ESP32.
+    *   **Check:** Check if you have a flyback diode installed across the motor terminals.
+    *   **Fix:** Add a flyback diode (such as a 1N4007) across the motor terminals (cathode/striped end to positive, anode to negative) to absorb the voltage spikes safely.
+
+### 3. Information needed
+To give you more specific guidance, please share:
+*   How are the ESP32 and motor powered (e.g., USB, external battery, single power supply)?
+*   What motor driver, relay, or transistor are you using to control the motor?
+*   What type of motor are you using (e.g., small DC motor, servo, stepper)?
+
+### 4. Safety notes
+Never connect a motor directly to an ESP32 pin, as the high current and inductive spikes can permanently damage the microcontroller. Always use a suitable motor driver or transistor circuit.
+
