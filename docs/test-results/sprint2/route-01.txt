@@ -1,0 +1,28 @@
+﻿> py main.py
+MicroAssist - microcontroller selection and debugging assistant
+Describe your project requirements or your problem: I want to build a weather station with Wi-Fi. Which board should I use?
+
+Asking Google AI...
+
+[Recommendation agent]
+
+### 1. Recommended microcontroller or board
+Provisional recommendation: **ESP32 DevKitC** development board.
+
+### 2. Reasons for the recommendation
+* **Integrated Wi-Fi:** Built-in 2.4 GHz Wi-Fi makes it easy to send weather data to cloud dashboards or web servers.
+* **Sensor Interfaces:** Includes I2C, SPI, and ADC pins required for common sensors like the BME280 (temperature, humidity, pressure).
+* **Beginner Friendly:** Very affordable and widely supported in the Arduino IDE and MicroPython.
+
+### 3. Assumptions or clarification needed
+**Assumptions:** You are using basic digital sensors and standard USB or wall power.
+
+**Clarification questions:**
+1. Will this weather station run on battery or solar power?
+2. What specific sensors do you plan to connect (e.g., I2C environment sensors, wind anemometers, or rain gauges)?
+
+### 4. Limitations and specifications to verify
+* **Power Consumption:** Wi-Fi transmission uses high peak currents (~240 mA). You must configure deep-sleep modes if using a battery.
+* **Operating Voltage:** The ESP32 uses 3.3V logic. Connecting 5V sensors directly will damage the board, so verify sensor voltages first.
+* **Documentation:** Verify pin layouts, available GPIOs, and power requirements in official Espressif documentation before buying.
+

@@ -1,0 +1,44 @@
+﻿> py main.py
+MicroAssist - microcontroller selection and debugging assistant
+Describe your project requirements or your problem: My LCD shows only black boxes.
+
+Asking Google AI...
+
+[Debugging agent]
+
+### 1. Problem summary
+Your character LCD screen turns on, but only displays solid black boxes (usually on the top row) instead of your text.
+
+---
+
+### 2. Likely causes and fixes
+
+*   **Cause 1: Incorrect contrast adjustment**
+    *   **Why:** If the contrast voltage on the LCD's contrast pin (V0) is set too high, all pixel blocks light up completely.
+    *   **Simple check:** Look for a small blue potentiometer (trimpot) on your breadboard or on the back of the LCD module. Turn it slowly while the board is powered.
+    *   **Fix:** Adjust the potentiometer until the solid boxes fade away and text becomes clear.
+
+*   **Cause 2: Incorrect wiring or loose connections**
+    *   **Why:** The LCD shows black boxes by default when it receives power, but fails to receive initialization commands from the microcontroller.
+    *   **Simple check:** Check if any jumper wires are loose, or if data pins (RS, EN, D4ΓÇôD7) or I2C pins (SDA, SCL) are plugged into the wrong pins.
+    *   **Fix:** Re-seat all jumper wires firmly and verify that the physical wiring matches the pin numbers defined in your code.
+
+*   **Cause 3: Wrong I2C address (if using an I2C adapter module)**
+    *   **Why:** If your LCD uses a 4-pin I2C adapter, the code will fail to communicate if the programmed I2C address is incorrect.
+    *   **Simple check:** Run an "I2C scanner" sketch on your microcontroller to detect the screen's address.
+    *   **Fix:** Update the address in your code (common defaults are `0x27` or `0x3F`).
+
+---
+
+### 3. Information needed
+To help you further, please provide:
+1. Which microcontroller board are you using (for example, Arduino Uno, ESP32, or Raspberry Pi Pico)?
+2. Is your LCD connected directly using 10+ wires, or using a 4-pin I2C adapter?
+3. Could you share your code and wiring setup?
+
+---
+
+### 4. Safety notes
+*   Double-check that power (5V/3.3V) and Ground (GND) are not reversed. Reversing power can permanently damage the LCD or your microcontroller.
+*   No other special safety risks.
+

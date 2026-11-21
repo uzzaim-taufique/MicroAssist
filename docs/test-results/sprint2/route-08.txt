@@ -1,0 +1,10 @@
+﻿> py main.py
+MicroAssist - microcontroller selection and debugging assistant
+Describe your project requirements or your problem: Arduino
+
+Asking Google AI...
+
+[MicroAssist]
+
+I'm not sure what you need yet. Are you choosing a microcontroller for a new project, or fixing a problem with an existing one? Please describe it in a bit more detail.
+

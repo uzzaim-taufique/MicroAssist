@@ -1,0 +1,25 @@
+﻿> py main.py
+MicroAssist - microcontroller selection and debugging assistant
+Describe your project requirements or your problem: I need a cheap board to control 4 servo motors for a robot arm.
+
+Asking Google AI...
+
+[Recommendation agent]
+
+### 1. Recommended microcontroller or board
+Raspberry Pi Pico (development board based on the RP2040 microcontroller)
+
+### 2. Reasons for the recommendation
+* **Low cost:** Typically priced around $4 USD, fitting tight budgets.
+* **Hardware PWM:** Features 16 PWM channels, easily managing 4 servo signals simultaneously without lagging.
+* **Beginner friendly:** Supports MicroPython and C/C++, making servo setup simple with existing libraries.
+
+### 3. Assumptions or clarification needed
+* **Assumptions:** You are using standard 3-wire hobby servos (such as SG90 or MG996R) controlled via standard PWM signals.
+* **Clarification question:** Do your servos specifically require 5V signal logic, or can they accept 3.3V control signals?
+
+### 4. Limitations and specifications to verify
+* **3.3V Logic:** GPIO pins output 3.3V. While most hobby servos accept 3.3V control signals, check your servo's datasheet to confirm if a 3.3V to 5V logic level shifter is needed.
+* **Current limits:** Never power servo motors directly from the Pico's power pins. Servos draw high current that can damage the board.
+* **Power setup:** Use a separate external power supply (e.g., 5VΓÇô6V battery pack) for the servos, and connect the external power supply ground to the Pico's ground pin.
+

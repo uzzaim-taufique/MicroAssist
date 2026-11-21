@@ -1,0 +1,27 @@
+﻿> py main.py
+MicroAssist - microcontroller selection and debugging assistant
+Describe your project requirements or your problem: Which microcontroller is best for a battery-powered step counter with Bluetooth?
+
+Asking Google AI...
+
+[Recommendation agent]
+
+### 1. Recommended microcontroller or board
+Seeed Studio XIAO BLE ( Sense version, based on the Nordic nRF52840)
+
+### 2. Reasons for the recommendation
+* **Bluetooth Built-in:** The nRF52840 chip features integrated Bluetooth Low Energy (BLE 5.0), making it ideal for sending step data to a smartphone with minimal power draw.
+* **Onboard Sensor:** The Sense variant includes a built-in 6-axis IMU (accelerometer and gyroscope), eliminating the need for external motion sensor wiring to count steps.
+* **Power and Size:** It has an ultra-small wearable footprint, low-power sleep modes, and an onboard lithium battery charging IC.
+
+### 3. Assumptions or clarification needed
+* **Assumptions:** You prefer an all-in-one board with a built-in accelerometer rather than wiring a separate sensor.
+* **Clarification questions:**
+  1. Do you require an onboard display (like an OLED) to show step counts directly on the device?
+  2. Do you plan to program this using the Arduino IDE or Nordic's SDK?
+
+### 4. Limitations and specifications to verify
+* **Voltage:** Operates strictly at 3.3V logic; do not connect 5V signals directly to GPIO pins.
+* **Verification:** Check the manufacturer's datasheet for exact battery sleep-current specs and antenna range for your intended enclosure.
+* Treat this recommendation as guidance requiring verification before purchasing or connecting hardware.
+
