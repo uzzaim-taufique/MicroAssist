@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# MicroAssist database search log (SCRUM-16)
+logs/
