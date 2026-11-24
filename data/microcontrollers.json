@@ -1,0 +1,762 @@
+{
+  "version": 1,
+  "description": "MicroAssist verified microcontroller database (SCRUM-16). Values come from the manufacturer datasheets named in datasheet_source. Always check the official datasheet for your exact part and board.",
+  "fields": {
+    "clock_mhz": "supported or typical clock speeds in MHz",
+    "flash_kb": "program flash in KB (on the module/board when flash is external)",
+    "ram_kb": "SRAM in KB",
+    "eeprom_kb": "EEPROM in KB (null if none)",
+    "logic_level_v": "I/O logic level on common boards"
+  },
+  "microcontrollers": [
+    {
+      "id": "atmega328p",
+      "name": "ATmega328P",
+      "manufacturer": "Microchip (Atmel)",
+      "architecture": "AVR",
+      "bits": 8,
+      "clock_mhz": [
+        16,
+        20
+      ],
+      "flash_kb": 32,
+      "ram_kb": 2,
+      "eeprom_kb": 1,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "10-bit, 8 channels (6 on Arduino Uno)",
+      "gpio": 23,
+      "logic_level_v": 5.0,
+      "supply_voltage": "1.8-5.5 V",
+      "native_usb": false,
+      "example_boards": [
+        "Arduino Uno R3",
+        "Arduino Nano",
+        "Arduino Pro Mini"
+      ],
+      "aliases": [
+        "ATmega328P",
+        "ATmega328",
+        "ATmega328P-PU",
+        "ATmega328P-AU",
+        "Arduino Uno",
+        "Arduino Uno R3",
+        "Arduino Uno Rev3",
+        "Arduino Nano",
+        "Arduino Pro Mini"
+      ],
+      "notes": "Runs at 16 MHz on Arduino Uno and Nano (20 MHz is the chip maximum).",
+      "datasheet_source": "Microchip ATmega328P datasheet"
+    },
+    {
+      "id": "atmega2560",
+      "name": "ATmega2560",
+      "manufacturer": "Microchip (Atmel)",
+      "architecture": "AVR",
+      "bits": 8,
+      "clock_mhz": [
+        16
+      ],
+      "flash_kb": 256,
+      "ram_kb": 8,
+      "eeprom_kb": 4,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "10-bit, 16 channels",
+      "gpio": 86,
+      "logic_level_v": 5.0,
+      "supply_voltage": "4.5-5.5 V at 16 MHz",
+      "native_usb": false,
+      "example_boards": [
+        "Arduino Mega 2560"
+      ],
+      "aliases": [
+        "ATmega2560",
+        "Arduino Mega",
+        "Arduino Mega 2560"
+      ],
+      "notes": "Arduino Mega 2560 exposes 54 digital pins and 16 analog inputs, with 4 hardware UARTs.",
+      "datasheet_source": "Microchip ATmega2560 datasheet"
+    },
+    {
+      "id": "atmega32u4",
+      "name": "ATmega32U4",
+      "manufacturer": "Microchip (Atmel)",
+      "architecture": "AVR",
+      "bits": 8,
+      "clock_mhz": [
+        16
+      ],
+      "flash_kb": 32,
+      "ram_kb": 2.5,
+      "eeprom_kb": 1,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "10-bit, 12 channels",
+      "gpio": 26,
+      "logic_level_v": 5.0,
+      "supply_voltage": "2.7-5.5 V",
+      "native_usb": true,
+      "example_boards": [
+        "Arduino Leonardo",
+        "Arduino Micro",
+        "SparkFun Pro Micro"
+      ],
+      "aliases": [
+        "ATmega32U4",
+        "Arduino Leonardo",
+        "Arduino Micro",
+        "Pro Micro",
+        "SparkFun Pro Micro"
+      ],
+      "notes": "Native USB, so the board can act as a keyboard or mouse.",
+      "datasheet_source": "Microchip ATmega32U4 datasheet"
+    },
+    {
+      "id": "atmega4809",
+      "name": "ATmega4809",
+      "manufacturer": "Microchip",
+      "architecture": "AVR",
+      "bits": 8,
+      "clock_mhz": [
+        16,
+        20
+      ],
+      "flash_kb": 48,
+      "ram_kb": 6,
+      "eeprom_kb": 0.25,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "10-bit, 16 channels",
+      "gpio": 41,
+      "logic_level_v": 5.0,
+      "supply_voltage": "1.8-5.5 V",
+      "native_usb": false,
+      "example_boards": [
+        "Arduino Nano Every"
+      ],
+      "aliases": [
+        "ATmega4809",
+        "Arduino Nano Every"
+      ],
+      "notes": "Arduino Nano Every runs it at 16 MHz.",
+      "datasheet_source": "Microchip ATmega4809 datasheet"
+    },
+    {
+      "id": "attiny85",
+      "name": "ATtiny85",
+      "manufacturer": "Microchip (Atmel)",
+      "architecture": "AVR",
+      "bits": 8,
+      "clock_mhz": [
+        8,
+        16,
+        20
+      ],
+      "flash_kb": 8,
+      "ram_kb": 0.5,
+      "eeprom_kb": 0.5,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "10-bit, 4 channels",
+      "gpio": 6,
+      "logic_level_v": 5.0,
+      "supply_voltage": "1.8-5.5 V",
+      "native_usb": false,
+      "example_boards": [
+        "Digispark ATtiny85"
+      ],
+      "aliases": [
+        "ATtiny85",
+        "ATtiny85-20PU",
+        "Digispark"
+      ],
+      "notes": "Very small 8-pin chip for simple tasks; only 6 I/O pins.",
+      "datasheet_source": "Microchip ATtiny85 datasheet"
+    },
+    {
+      "id": "esp32",
+      "name": "ESP32 (ESP32-WROOM-32)",
+      "manufacturer": "Espressif",
+      "architecture": "Xtensa LX6 dual-core",
+      "bits": 32,
+      "clock_mhz": [
+        160,
+        240
+      ],
+      "flash_kb": 4096,
+      "ram_kb": 520,
+      "eeprom_kb": null,
+      "wifi": true,
+      "bluetooth": "Bluetooth 4.2 Classic + BLE",
+      "other_wireless": null,
+      "adc": "12-bit SAR, 18 channels",
+      "gpio": 34,
+      "logic_level_v": 3.3,
+      "supply_voltage": "3.0-3.6 V",
+      "native_usb": false,
+      "example_boards": [
+        "ESP32-DevKitC",
+        "ESP32 DevKit V1",
+        "NodeMCU-32S"
+      ],
+      "aliases": [
+        "ESP32",
+        "ESP32-WROOM-32",
+        "ESP32-WROOM-32E",
+        "ESP32-WROOM-32D",
+        "ESP32-D0WD",
+        "ESP32 DevKitC",
+        "ESP32-DevKitC",
+        "ESP32 DevKit V1",
+        "ESP32 DevKit",
+        "NodeMCU-32S"
+      ],
+      "notes": "4 MB flash is on the WROOM-32 module. ADC2 cannot be used while Wi-Fi is on. Not 5 V tolerant.",
+      "datasheet_source": "Espressif ESP32 datasheet and ESP32-WROOM-32 module datasheet"
+    },
+    {
+      "id": "esp32-s3",
+      "name": "ESP32-S3",
+      "manufacturer": "Espressif",
+      "architecture": "Xtensa LX7 dual-core",
+      "bits": 32,
+      "clock_mhz": [
+        240
+      ],
+      "flash_kb": 8192,
+      "ram_kb": 512,
+      "eeprom_kb": null,
+      "wifi": true,
+      "bluetooth": "Bluetooth 5 (LE)",
+      "other_wireless": null,
+      "adc": "12-bit SAR, 20 channels",
+      "gpio": 45,
+      "logic_level_v": 3.3,
+      "supply_voltage": "3.0-3.6 V",
+      "native_usb": true,
+      "example_boards": [
+        "ESP32-S3-DevKitC-1",
+        "Arduino Nano ESP32"
+      ],
+      "aliases": [
+        "ESP32-S3",
+        "ESP32S3",
+        "ESP32-S3-WROOM-1",
+        "ESP32-S3-DevKitC-1",
+        "Arduino Nano ESP32"
+      ],
+      "notes": "Flash is external; boards commonly have 8 MB or 16 MB. Native USB and vector instructions for AI/DSP.",
+      "datasheet_source": "Espressif ESP32-S3 datasheet"
+    },
+    {
+      "id": "esp32-c3",
+      "name": "ESP32-C3",
+      "manufacturer": "Espressif",
+      "architecture": "RISC-V single-core",
+      "bits": 32,
+      "clock_mhz": [
+        160
+      ],
+      "flash_kb": 4096,
+      "ram_kb": 400,
+      "eeprom_kb": null,
+      "wifi": true,
+      "bluetooth": "Bluetooth 5 (LE)",
+      "other_wireless": null,
+      "adc": "12-bit SAR, 6 channels",
+      "gpio": 22,
+      "logic_level_v": 3.3,
+      "supply_voltage": "3.0-3.6 V",
+      "native_usb": true,
+      "example_boards": [
+        "ESP32-C3-DevKitM-1",
+        "Seeed XIAO ESP32C3"
+      ],
+      "aliases": [
+        "ESP32-C3",
+        "ESP32C3",
+        "ESP32-C3-MINI-1",
+        "ESP32-C3-DevKitM-1",
+        "XIAO ESP32C3",
+        "Seeed XIAO ESP32C3"
+      ],
+      "notes": "Low-cost Wi-Fi + BLE chip. 4 MB flash on common modules. Built-in USB Serial/JTAG.",
+      "datasheet_source": "Espressif ESP32-C3 datasheet"
+    },
+    {
+      "id": "esp32-c6",
+      "name": "ESP32-C6",
+      "manufacturer": "Espressif",
+      "architecture": "RISC-V single-core",
+      "bits": 32,
+      "clock_mhz": [
+        160
+      ],
+      "flash_kb": 4096,
+      "ram_kb": 512,
+      "eeprom_kb": null,
+      "wifi": true,
+      "bluetooth": "Bluetooth 5 (LE)",
+      "other_wireless": "IEEE 802.15.4 (Thread, Zigbee)",
+      "adc": "12-bit SAR, 7 channels",
+      "gpio": 30,
+      "logic_level_v": 3.3,
+      "supply_voltage": "3.0-3.6 V",
+      "native_usb": true,
+      "example_boards": [
+        "ESP32-C6-DevKitC-1"
+      ],
+      "aliases": [
+        "ESP32-C6",
+        "ESP32C6",
+        "ESP32-C6-WROOM-1",
+        "ESP32-C6-DevKitC-1"
+      ],
+      "notes": "Wi-Fi 6 plus IEEE 802.15.4 (Thread/Zigbee). Flash is on the module (4 MB or more).",
+      "datasheet_source": "Espressif ESP32-C6 datasheet"
+    },
+    {
+      "id": "esp8266",
+      "name": "ESP8266EX",
+      "manufacturer": "Espressif",
+      "architecture": "Xtensa L106 single-core",
+      "bits": 32,
+      "clock_mhz": [
+        80,
+        160
+      ],
+      "flash_kb": 4096,
+      "ram_kb": 80,
+      "eeprom_kb": null,
+      "wifi": true,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "10-bit, 1 channel",
+      "gpio": 17,
+      "logic_level_v": 3.3,
+      "supply_voltage": "2.5-3.6 V",
+      "native_usb": false,
+      "example_boards": [
+        "NodeMCU (ESP-12E)",
+        "Wemos D1 Mini"
+      ],
+      "aliases": [
+        "ESP8266",
+        "ESP8266EX",
+        "ESP-12E",
+        "ESP-12F",
+        "NodeMCU",
+        "NodeMCU v2",
+        "NodeMCU v3",
+        "Wemos D1 Mini",
+        "D1 Mini"
+      ],
+      "notes": "80 KB user-data RAM. Only one analog input. Older than the ESP32; no Bluetooth.",
+      "datasheet_source": "Espressif ESP8266EX datasheet"
+    },
+    {
+      "id": "rp2040",
+      "name": "RP2040",
+      "manufacturer": "Raspberry Pi",
+      "architecture": "ARM Cortex-M0+ dual-core",
+      "bits": 32,
+      "clock_mhz": [
+        133,
+        200
+      ],
+      "flash_kb": 2048,
+      "ram_kb": 264,
+      "eeprom_kb": null,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "12-bit, 4 inputs (3 on Pico)",
+      "gpio": 30,
+      "logic_level_v": 3.3,
+      "supply_voltage": "1.8-3.3 V I/O",
+      "native_usb": true,
+      "example_boards": [
+        "Raspberry Pi Pico"
+      ],
+      "aliases": [
+        "RP2040",
+        "Raspberry Pi Pico",
+        "Pi Pico",
+        "Pico"
+      ],
+      "notes": "Flash is external (2 MB on Pico). PIO blocks for custom interfaces. Pico exposes 26 GPIO. Certified for 200 MHz since 2025 (Pico SDK 2.1.1).",
+      "datasheet_source": "Raspberry Pi RP2040 datasheet"
+    },
+    {
+      "id": "rp2040-pico-w",
+      "name": "Raspberry Pi Pico W (RP2040 + CYW43439)",
+      "manufacturer": "Raspberry Pi",
+      "architecture": "ARM Cortex-M0+ dual-core",
+      "bits": 32,
+      "clock_mhz": [
+        133,
+        200
+      ],
+      "flash_kb": 2048,
+      "ram_kb": 264,
+      "eeprom_kb": null,
+      "wifi": true,
+      "bluetooth": "Bluetooth 5.2",
+      "other_wireless": null,
+      "adc": "12-bit, 3 inputs on Pico W",
+      "gpio": 26,
+      "logic_level_v": 3.3,
+      "supply_voltage": "1.8-5.5 V board input",
+      "native_usb": true,
+      "example_boards": [
+        "Raspberry Pi Pico W"
+      ],
+      "aliases": [
+        "Raspberry Pi Pico W",
+        "Pico W",
+        "Pi Pico W",
+        "CYW43439"
+      ],
+      "notes": "Same RP2040 as Pico, plus an Infineon CYW43439 chip for 2.4 GHz Wi-Fi and Bluetooth.",
+      "datasheet_source": "Raspberry Pi Pico W datasheet"
+    },
+    {
+      "id": "rp2350",
+      "name": "RP2350",
+      "manufacturer": "Raspberry Pi",
+      "architecture": "ARM Cortex-M33 dual-core (or Hazard3 RISC-V)",
+      "bits": 32,
+      "clock_mhz": [
+        150
+      ],
+      "flash_kb": 4096,
+      "ram_kb": 520,
+      "eeprom_kb": null,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "12-bit, 4 inputs (RP2350A)",
+      "gpio": 30,
+      "logic_level_v": 3.3,
+      "supply_voltage": "1.8-3.3 V I/O",
+      "native_usb": true,
+      "example_boards": [
+        "Raspberry Pi Pico 2"
+      ],
+      "aliases": [
+        "RP2350",
+        "Raspberry Pi Pico 2",
+        "Pico 2"
+      ],
+      "notes": "Successor to RP2040. 4 MB external flash on Pico 2. Adds security features.",
+      "datasheet_source": "Raspberry Pi RP2350 datasheet"
+    },
+    {
+      "id": "stm32f103c8",
+      "name": "STM32F103C8",
+      "manufacturer": "STMicroelectronics",
+      "architecture": "ARM Cortex-M3",
+      "bits": 32,
+      "clock_mhz": [
+        72
+      ],
+      "flash_kb": 64,
+      "ram_kb": 20,
+      "eeprom_kb": null,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "12-bit, 10 channels",
+      "gpio": 37,
+      "logic_level_v": 3.3,
+      "supply_voltage": "2.0-3.6 V",
+      "native_usb": true,
+      "example_boards": [
+        "Blue Pill"
+      ],
+      "aliases": [
+        "STM32F103C8",
+        "STM32F103C8T6",
+        "STM32F103",
+        "Blue Pill"
+      ],
+      "notes": "Many cheap Blue Pill boards use clone chips; check the marking. Most pins are 5 V tolerant.",
+      "datasheet_source": "ST STM32F103x8 datasheet"
+    },
+    {
+      "id": "stm32f401cc",
+      "name": "STM32F401CC",
+      "manufacturer": "STMicroelectronics",
+      "architecture": "ARM Cortex-M4F",
+      "bits": 32,
+      "clock_mhz": [
+        84
+      ],
+      "flash_kb": 256,
+      "ram_kb": 64,
+      "eeprom_kb": null,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "12-bit, 10 channels",
+      "gpio": 36,
+      "logic_level_v": 3.3,
+      "supply_voltage": "1.7-3.6 V",
+      "native_usb": true,
+      "example_boards": [
+        "WeAct Black Pill (F401)"
+      ],
+      "aliases": [
+        "STM32F401CC",
+        "STM32F401CCU6",
+        "STM32F401",
+        "Black Pill F401"
+      ],
+      "notes": "Has a floating-point unit (FPU).",
+      "datasheet_source": "ST STM32F401xB/C datasheet"
+    },
+    {
+      "id": "stm32f411ce",
+      "name": "STM32F411CE",
+      "manufacturer": "STMicroelectronics",
+      "architecture": "ARM Cortex-M4F",
+      "bits": 32,
+      "clock_mhz": [
+        100
+      ],
+      "flash_kb": 512,
+      "ram_kb": 128,
+      "eeprom_kb": null,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "12-bit, 10 channels",
+      "gpio": 36,
+      "logic_level_v": 3.3,
+      "supply_voltage": "1.7-3.6 V",
+      "native_usb": true,
+      "example_boards": [
+        "WeAct Black Pill (F411)"
+      ],
+      "aliases": [
+        "STM32F411CE",
+        "STM32F411CEU6",
+        "STM32F411",
+        "Black Pill",
+        "Black Pill F411"
+      ],
+      "notes": "Has a floating-point unit (FPU).",
+      "datasheet_source": "ST STM32F411xC/E datasheet"
+    },
+    {
+      "id": "samd21g18",
+      "name": "ATSAMD21G18",
+      "manufacturer": "Microchip",
+      "architecture": "ARM Cortex-M0+",
+      "bits": 32,
+      "clock_mhz": [
+        48
+      ],
+      "flash_kb": 256,
+      "ram_kb": 32,
+      "eeprom_kb": null,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "12-bit, 14 channels",
+      "gpio": 38,
+      "logic_level_v": 3.3,
+      "supply_voltage": "1.62-3.63 V",
+      "native_usb": true,
+      "example_boards": [
+        "Arduino Zero",
+        "Arduino MKR Zero",
+        "Seeed XIAO SAMD21"
+      ],
+      "aliases": [
+        "ATSAMD21G18",
+        "SAMD21G18",
+        "SAMD21",
+        "Arduino Zero",
+        "Arduino MKR Zero",
+        "XIAO SAMD21",
+        "Seeed XIAO SAMD21"
+      ],
+      "notes": "Has a 10-bit DAC. Not 5 V tolerant.",
+      "datasheet_source": "Microchip SAM D21 datasheet"
+    },
+    {
+      "id": "nrf52840",
+      "name": "nRF52840",
+      "manufacturer": "Nordic Semiconductor",
+      "architecture": "ARM Cortex-M4F",
+      "bits": 32,
+      "clock_mhz": [
+        64
+      ],
+      "flash_kb": 1024,
+      "ram_kb": 256,
+      "eeprom_kb": null,
+      "wifi": false,
+      "bluetooth": "Bluetooth 5 (LE)",
+      "other_wireless": "IEEE 802.15.4 (Thread, Zigbee)",
+      "adc": "12-bit SAADC, 8 channels",
+      "gpio": 48,
+      "logic_level_v": 3.3,
+      "supply_voltage": "1.7-5.5 V",
+      "native_usb": true,
+      "example_boards": [
+        "Arduino Nano 33 BLE",
+        "Adafruit Feather nRF52840",
+        "Seeed XIAO nRF52840"
+      ],
+      "aliases": [
+        "nRF52840",
+        "Arduino Nano 33 BLE",
+        "Arduino Nano 33 BLE Sense",
+        "Feather nRF52840",
+        "XIAO nRF52840"
+      ],
+      "notes": "Low-power Bluetooth LE chip with USB. Also supports IEEE 802.15.4 (Thread, Zigbee).",
+      "datasheet_source": "Nordic nRF52840 Product Specification"
+    },
+    {
+      "id": "ra4m1",
+      "name": "Renesas RA4M1",
+      "manufacturer": "Renesas",
+      "architecture": "ARM Cortex-M4F",
+      "bits": 32,
+      "clock_mhz": [
+        48
+      ],
+      "flash_kb": 256,
+      "ram_kb": 32,
+      "eeprom_kb": 8,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "14-bit, plus a 12-bit DAC",
+      "gpio": null,
+      "logic_level_v": 5.0,
+      "supply_voltage": "1.6-5.5 V",
+      "native_usb": true,
+      "example_boards": [
+        "Arduino Uno R4 Minima",
+        "Arduino Uno R4 WiFi"
+      ],
+      "aliases": [
+        "RA4M1",
+        "R7FA4M1AB",
+        "R7FA4M1AB3CFM",
+        "Arduino Uno R4",
+        "Arduino Uno R4 Minima",
+        "Arduino Uno R4 WiFi"
+      ],
+      "notes": "Arduino Uno R4 keeps the 5 V Uno layout. The Uno R4 WiFi adds an ESP32-S3 module for Wi-Fi and Bluetooth. Has a CAN controller.",
+      "datasheet_source": "Renesas RA4M1 Group datasheet"
+    },
+    {
+      "id": "imxrt1062",
+      "name": "NXP i.MX RT1062",
+      "manufacturer": "NXP",
+      "architecture": "ARM Cortex-M7",
+      "bits": 32,
+      "clock_mhz": [
+        600
+      ],
+      "flash_kb": 8192,
+      "ram_kb": 1024,
+      "eeprom_kb": null,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "12-bit, 18 analog inputs on Teensy 4.1",
+      "gpio": 55,
+      "logic_level_v": 3.3,
+      "supply_voltage": "3.3 V I/O (not 5 V tolerant)",
+      "native_usb": true,
+      "example_boards": [
+        "Teensy 4.1",
+        "Teensy 4.0"
+      ],
+      "aliases": [
+        "i.MX RT1062",
+        "iMXRT1062",
+        "IMXRT1062",
+        "MIMXRT1062",
+        "Teensy 4.1",
+        "Teensy 4.0",
+        "Teensy 4"
+      ],
+      "notes": "Very fast. Teensy 4.1 has 8 MB flash and an Ethernet PHY; Teensy 4.0 has 2 MB flash.",
+      "datasheet_source": "NXP i.MX RT1060 datasheet; PJRC Teensy 4.1 page"
+    },
+    {
+      "id": "pic16f877a",
+      "name": "PIC16F877A",
+      "manufacturer": "Microchip",
+      "architecture": "PIC (mid-range)",
+      "bits": 8,
+      "clock_mhz": [
+        20
+      ],
+      "flash_kb": 14,
+      "ram_kb": 0.368,
+      "eeprom_kb": 0.25,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "10-bit, 8 channels",
+      "gpio": 33,
+      "logic_level_v": 5.0,
+      "supply_voltage": "2.0-5.5 V",
+      "native_usb": false,
+      "example_boards": [],
+      "aliases": [
+        "PIC16F877A",
+        "PIC16F877A-I/P",
+        "PIC16F877"
+      ],
+      "notes": "Classic 40-pin chip used in many university labs. 14 KB flash = 8K program words.",
+      "datasheet_source": "Microchip PIC16F87XA datasheet"
+    },
+    {
+      "id": "msp430g2553",
+      "name": "MSP430G2553",
+      "manufacturer": "Texas Instruments",
+      "architecture": "MSP430",
+      "bits": 16,
+      "clock_mhz": [
+        16
+      ],
+      "flash_kb": 16,
+      "ram_kb": 0.5,
+      "eeprom_kb": null,
+      "wifi": false,
+      "bluetooth": null,
+      "other_wireless": null,
+      "adc": "10-bit, 8 channels",
+      "gpio": 24,
+      "logic_level_v": 3.3,
+      "supply_voltage": "1.8-3.6 V",
+      "native_usb": false,
+      "example_boards": [
+        "MSP-EXP430G2 LaunchPad"
+      ],
+      "aliases": [
+        "MSP430G2553",
+        "MSP430",
+        "MSP-EXP430G2",
+        "MSP430 LaunchPad"
+      ],
+      "notes": "Ultra-low power. 16 GPIO in the 20-pin DIP package.",
+      "datasheet_source": "TI MSP430G2x53 datasheet"
+    }
+  ]
+}
