@@ -47,7 +47,7 @@ def get_recommendation(requirements, client=None, model=None):
             ),
         )
     except genai_errors.APIError as exc:          # wrong key, quota, server error
-        raise errors.MicroAssistError(errors.SERVICE_ERROR) from exc
+        raise errors.MicroAssistError(errors.api_error_message(exc)) from exc
     except errors.TIMEOUT_EXCEPTIONS as exc:         # Google AI too slow
         raise errors.MicroAssistError(errors.TIMED_OUT) from exc
     except errors.CONNECTION_EXCEPTIONS as exc:  # no internet

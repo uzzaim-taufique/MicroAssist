@@ -18,7 +18,7 @@ import errors
 
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "router_v1.md"
 DEFAULT_MODEL = "gemini-3.8-flash"
-TIMEOUT_MS = 15000  # routing is a short answer, so wait at most 15 seconds
+TIMEOUT_MS = 30000  # 15 s was too short when Gemini was busy (Sprint 2 evaluation)
 
 SELECTION = "selection"
 DEBUGGING = "debugging"
@@ -66,7 +66,7 @@ def route(request, client=None, model=None):
             ),
         )
     except genai_errors.APIError as exc:
-        raise errors.MicroAssistError(errors.SERVICE_ERROR) from exc
+        raise errors.MicroAssistError(errors.api_error_message(exc)) from exc
     except errors.TIMEOUT_EXCEPTIONS as exc:
         raise errors.MicroAssistError(errors.TIMED_OUT) from exc
     except errors.CONNECTION_EXCEPTIONS as exc:
